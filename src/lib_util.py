@@ -6,3 +6,6 @@ def get_terminal_size():
 def print_row(item):
     print(f"{item['name']} ({item['id']})")
     print(item['answer'], '\n')
+
+def reset_index(df):
+    return df.reset_index().drop('index', axis='columns')
