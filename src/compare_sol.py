@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-import shutil
 
 import lib_csv
 import lib_nlp
@@ -9,7 +8,7 @@ import lib_util
 _cs = lib_nlp.cosine_sim
 
 # Find terminal size
-w_, _ = lib_util.find_terminal_size()
+w_, _ = lib_util.get_terminal_size()
 
 def compare_sol():
     df = lib_csv.read_csv('../data/a1_q8.csv')

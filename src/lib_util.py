@@ -1,4 +1,6 @@
-def find_terminal_size():
+import shutil
+
+def get_terminal_size():
     return shutil.get_terminal_size((80, 20))
 
 def print_row(item):
