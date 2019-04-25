@@ -8,7 +8,7 @@ import lib_util
 _cs = lib_nlp.cosine_sim
 
 # Find terminal size
-w_, _ = lib_util.get_terminal_size((80, 20))
+w_, _ = lib_util.get_terminal_size()
 
 def check_sol(sol):
     df = lib_csv.read_csv('../data/a1_q8.csv')
@@ -21,13 +21,11 @@ def check_sol(sol):
                 })
     df = pd.concat([sol_col, df], ignore_index=True)
     scores = _cs(df.answer)[0]
-    x = np.where(scores > 0.5)
-
-    print(x)
-    raise
-
+    scores[0] = 0 # Ignore solution
+    x = np.where(scores > 0.3)[0]
+    
     for i in range(len(x)):
-        print(f'Similiarity score: {scores[x[i]]:.3f}\n')
+        print(f"Similiarity score: {scores[x[i]]:.3f}\n")
         lib_util.print_row(df.iloc[x[i]])
         print('=' * w_, '\n')
     print(f"Found {len(x)} (possible) cases")
