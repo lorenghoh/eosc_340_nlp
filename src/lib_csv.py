@@ -12,6 +12,7 @@ import pyarrow.parquet as pq
 
 import lib_util
 
+# TODO: Flag for string parsing (for multiple lines)
 def read_csv(file_name):
     df = pd.read_csv(
             file_name,
@@ -28,6 +29,10 @@ def read_df():
     pass
 
 def write_df():
+    pass
+
+# TODO: Default to text output?
+def write_output():
     pass
 
 if __name__ == '__main__':

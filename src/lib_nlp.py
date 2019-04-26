@@ -14,7 +14,7 @@ rm_punct = dict((ord(char), None) for char in string.punctuation)
 def stem_tokens(tokens):
     return [stemmer.stem(item) for item in tokens]
 
-'''remove punctuation, lowercase, stem'''
+# Remove punctuation, lowercase, stem
 def normalize(text):
     return  stem_tokens(
                 nltk.word_tokenize(
