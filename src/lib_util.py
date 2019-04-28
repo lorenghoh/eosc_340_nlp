@@ -9,3 +9,7 @@ def print_row(item):
 
 def reset_index(df):
     return df.reset_index().drop('index', axis='columns')
+
+def split_lines(item):
+    split_text = [x.replace('\xa0', '') for x in item.splitlines()]
+    return list(filter(None, split_text))
